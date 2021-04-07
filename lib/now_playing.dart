@@ -114,6 +114,24 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                                       ),
                                     ),
                                   ),
+                                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height:10),
+                                      Icon(
+                                        Icons.star,
+                                        size: 15,
+                                        color: Colors.yellow[200],
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        '${nowPlaying[index].voteAverage}',
+                                        style: TextStyle(
+                                            color: Colors.blue[300],
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),

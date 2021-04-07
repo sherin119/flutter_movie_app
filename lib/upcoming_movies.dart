@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_movie_app/now_playing.dart';
 import 'package:flutter/material.dart';
@@ -54,8 +55,6 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
       ),
       backgroundColor: Colors.black,
       appBar: AppBar(
-        //centerTitle: true,
-
         backgroundColor: Colors.black,
         actions: <Widget>[],
       ),
@@ -102,7 +101,6 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
                               crossAxisAlignment: CrossAxisAlignment
                                   .stretch,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                               children: [
                                 Expanded(
                                   flex: 3,
@@ -116,8 +114,27 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
                                     ),
                                   ),
                                 ),
+                                Row(mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(height:10),
+                                    Icon(
+                                      Icons.star,
+                                      size: 15,
+                                      color: Colors.yellow[200],
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      '${nowPlaying[index].voteAverage}',
+                                      style: TextStyle(
+                                          color: Colors.blue[300],
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
+
                           ),
                         );
                       },
