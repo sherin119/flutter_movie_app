@@ -5,7 +5,7 @@ Steps for running the app:
 
 1.Generate an ApiKey from https://www.themoviedb.org/
 
-2.Clone the repo from Github using any IDE`
+2.Clone the repo from Github using any IDE
 
 3.Run pub get
 
