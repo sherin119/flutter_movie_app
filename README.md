@@ -9,7 +9,7 @@ Steps for running the app:
 
 3.Run pub get
 
-4.Create a config.dart file in the main lib folder, and add the value of the ApiKey as 'const apiKey = "<ApiKey>";'
+4.Create a config.dart file in the main lib folder, and add the value of the ApiKey as 'const apiKey = "ApiKey";'
 
 5.Run the app
 
