@@ -3,7 +3,7 @@ A Movie app using Flutter, which shows the Lists of movies - Playing Now, and al
 
 Steps for running the app:
 
-1.Generate an ApiKey from https://www.themoviedb.org/
+1.Create an account on TMDB website and generate an ApiKey. (https://www.themoviedb.org/)
 
 2.Clone the repo from Github using any IDE
 
