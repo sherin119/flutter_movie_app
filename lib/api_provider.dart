@@ -13,7 +13,7 @@ class ApiProvider {
 
   Future<List> getUpcoming() async {
     var url =
-        'https://api.themoviedb.org/3/movie/upcoming?api_key=7d6fbf8c9b637e4f5295a86159c18a8d&language=en-US&page=2';
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1';
     var response = await http.get(Uri.parse(url));
     return movieFromJson(response.body).results;
   }
