@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         backgroundColor: Colors.black,
-        //dialogBackgroundColor: Colors.black,
         colorScheme: ColorScheme.dark(primary: Color(0xff7D090B)),
         buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
         highlightColor: Colors.grey[400],

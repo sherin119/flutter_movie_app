@@ -66,7 +66,6 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                 return Center(child: Text('Error: ${snapshot.error}'));
               } else if (snapshot.hasData) {
                 List nowPlaying = snapshot.data;
-                print(snapshot.data);
 
                 return Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),

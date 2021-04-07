@@ -7,7 +7,6 @@ class ApiProvider {
   Future<List> getNowPlaying() async {
     var url = 'https://api.themoviedb.org/3/movie/now_playing?page={0}&api_key=${apiKey}';
     var response = await http.get(Uri.parse(url));
-   // print((json.decode(response.body))['results']);
     return movieFromJson(response.body).results;
   }
 

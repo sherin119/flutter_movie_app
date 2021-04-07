@@ -5,7 +5,6 @@ import 'package:flutter_movie_app/api_provider.dart';
 import 'package:flutter_movie_app/detail.dart';
 import 'package:flutter_movie_app/json_data.dart';
 
-
 class UpcomingMovies extends StatefulWidget {
   @override
   UpcomingMoviesState createState() {
@@ -69,8 +68,6 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
                 return Center(child: Text('Error: ${snapshot.error}'));
               } else if (snapshot.hasData) {
                 List nowPlaying = snapshot.data;
-                print(snapshot.data);
-
                 return Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Column(

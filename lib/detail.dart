@@ -18,9 +18,6 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-
-        centerTitle: true,
-        //title: Text('NOW PLAYING', style: TextStyle(color: Colors.red),),
         backgroundColor: Colors.black,
         actions: <Widget>[],
       ),
