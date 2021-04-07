@@ -73,7 +73,8 @@ class _DetailsState extends State<Details> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             '${widget.result.title}',

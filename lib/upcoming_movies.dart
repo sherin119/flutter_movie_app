@@ -28,7 +28,9 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
     var imageUrl = 'https://image.tmdb.org/t/p/w500/';
 
     return Scaffold(
-      drawer: Theme(data: Theme.of(context).copyWith(canvasColor: Colors.black.withOpacity(0.5)),
+      drawer: Theme(
+        data: Theme.of(context)
+            .copyWith(canvasColor: Colors.black.withOpacity(0.5)),
         child: Drawer(
           child: ListView(
             children: [
@@ -36,7 +38,8 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
                 height: 50,
               ),
               ListTile(
-                title: Text('Now Playing movies', style: TextStyle(fontSize: 20)),
+                title:
+                    Text('Now Playing movies', style: TextStyle(fontSize: 20)),
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => NowPlayingMovies()),
@@ -70,76 +73,79 @@ class UpcomingMoviesState extends State<UpcomingMovies> {
                 return Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Column(
-                    children: [Text('UPCOMING',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          letterSpacing: 3,
-                          fontWeight: FontWeight.bold, fontSize: 30),
-                    ),
+                    children: [
+                      Text(
+                        'UPCOMING',
+                        style: TextStyle(
+                            color: Colors.grey,
+                            letterSpacing: 3,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30),
+                      ),
                       SizedBox(height: 20),
-                    GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      itemCount: nowPlaying.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          childAspectRatio: .78,
-                          crossAxisSpacing: 1,
-                          mainAxisSpacing: 1,
-                          crossAxisCount: 2),
-                      itemBuilder: (BuildContext context, int index) {
-                        Result result = nowPlaying[index];
-                        return GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => Details(result: result)),
-                          ),
-                          child: Card(
-                            color: Colors.grey[850],
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment
-                                  .stretch,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    child: Image(
-                                      height: 400,
-                                      width: 120,
-                                      image: NetworkImage(imageUrl +
-                                          '${nowPlaying[index].posterPath}'),
-                                      fit: BoxFit.fill,
+                      GridView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: nowPlaying.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: .78,
+                            crossAxisSpacing: 1,
+                            mainAxisSpacing: 1,
+                            crossAxisCount: 2),
+                        itemBuilder: (BuildContext context, int index) {
+                          Result result = nowPlaying[index];
+                          return GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => Details(result: result)),
+                            ),
+                            child: Card(
+                              color: Colors.grey[850],
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      child: Image(
+                                        height: 400,
+                                        width: 120,
+                                        image: NetworkImage(imageUrl +
+                                            '${nowPlaying[index].posterPath}'),
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Row(mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(height:10),
-                                    Icon(
-                                      Icons.star,
-                                      size: 15,
-                                      color: Colors.yellow[200],
-                                    ),
-                                    SizedBox(width: 5),
-                                    Text(
-                                      '${nowPlaying[index].voteAverage}',
-                                      style: TextStyle(
-                                          color: Colors.blue[300],
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height: 10),
+                                      Icon(
+                                        Icons.star,
+                                        size: 15,
+                                        color: Colors.yellow[200],
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        '${nowPlaying[index].voteAverage}',
+                                        style: TextStyle(
+                                            color: Colors.blue[300],
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 );
               } else {

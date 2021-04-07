@@ -26,7 +26,9 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
     var imageUrl = 'https://image.tmdb.org/t/p/w500/';
 
     return Scaffold(
-      drawer: Theme(data: Theme.of(context).copyWith(canvasColor: Colors.black.withOpacity(0.5)),
+      drawer: Theme(
+        data: Theme.of(context)
+            .copyWith(canvasColor: Colors.black.withOpacity(0.5)),
         child: Drawer(
           child: ListView(
             children: [
@@ -34,7 +36,8 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                 height: 50,
               ),
               ListTile(
-                title: Text('Now Playing movies', style: TextStyle(fontSize: 20)),
+                title:
+                    Text('Now Playing movies', style: TextStyle(fontSize: 20)),
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => NowPlayingMovies()),
@@ -71,12 +74,14 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Column(
                     children: [
-                      Text('NOW PLAYING',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        letterSpacing: 3,
-                        fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
+                      Text(
+                        'NOW PLAYING',
+                        style: TextStyle(
+                            color: Colors.grey,
+                            letterSpacing: 3,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30),
+                      ),
                       SizedBox(height: 20),
                       GridView.builder(
                         physics: NeverScrollableScrollPhysics(),
@@ -100,7 +105,8 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                               color: Colors.grey[850],
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Expanded(
                                     flex: 3,
@@ -114,9 +120,10 @@ class NowPlayingMoviesState extends State<NowPlayingMovies> {
                                       ),
                                     ),
                                   ),
-                                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(height:10),
+                                      SizedBox(height: 10),
                                       Icon(
                                         Icons.star,
                                         size: 15,
